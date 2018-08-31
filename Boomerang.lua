@@ -55,6 +55,9 @@ local function IsAddonEnabled(name)
     return GetAddOnEnableState(UnitName("player"), name) == 2 and select(4, GetAddOnInfo(name)) and true or false
 end
 
+CreateFrame("GameTooltip", "BoomerangScanningTooltip", nil, "GameTooltipTemplate"); -- Tooltip name cannot be nil
+BoomerangScanningTooltip:SetOwner(WorldFrame, "ANCHOR_NONE");
+
 local function GetCurrentAuctionItem()
     -- from Auctionator
 
@@ -72,10 +75,10 @@ local function GetCurrentAuctionItem()
 
         auctionItemLink = "|cffcccccc|Hbattlepet:"..speciesID..":"..level..":"..breedQuality..":"..maxHealth..":"..power..":"..speed..":"..battlePetID.."|h["..name.."]|h|r";
     else
-        AtrScanningTooltip:SetAuctionSellItem();
+        BoomerangScanningTooltip:SetAuctionSellItem();
 
         local name;
-        name, auctionItemLink = AtrScanningTooltip:GetItem();
+        name, auctionItemLink = BoomerangScanningTooltip:GetItem();
     end
 
     return auctionItemLink;
@@ -110,7 +113,7 @@ local function AuctionHook(...)
         end
 
         print(ADDON_NAME .. ": " .. action .. " posting " .. itemLink .. " for " .. coins(pricePer) .. eachString .. ". "
-                .. priceSource .. " suggests " .. coins(suggestedPrice));
+                .. priceSource .. " suggests " .. coins(suggestedPrice) .. ".");
 
         if (blockingEnabled) then
             return
