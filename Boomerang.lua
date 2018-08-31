@@ -176,14 +176,11 @@ if (IsAddonEnabled("TheUndermineJournal") and TUJMarketInfo) then
         TUJMarketInfo(itemLink, TUJ)
 
         if (TUJ['market']) then
-            if (TUJ['stddev'] > 0) then
-                if (pricePer < (TUJ['market'] - TUJ['stddev'] * 2)) then
-                    return TUJ['market'], "The Undermine Journal"
-                end
-            else
-                if (pricePer < (TUJ['market'] * MIN_PRICE_FACTOR)) then
-                    return TUJ['market'], "The Undermine Journal"
-                end
+            if (TUJ['stddev'] > 0 and pricePer < (TUJ['market'] - TUJ['stddev'] * 2)) then
+                return TUJ['market'], "The Undermine Journal"
+            end
+            if (pricePer < (TUJ['market'] * MIN_PRICE_FACTOR)) then
+                return TUJ['market'], "The Undermine Journal"
             end
         end
 

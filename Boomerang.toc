@@ -2,7 +2,7 @@
 ## Title: Boomerang Anti-Snipe
 ## Author: Erorus
 ## Notes: Prevents posting auctions at low buyouts. Requires a pricing source like TSM, TUJ, Auctionator, etc.
-## Version: 1.0.1
+## Version: 1.0.2
 ## OptionalDeps: Auctionator, AuctionLite, TheUndermineJournal, TradeSkillMaster
 
 Boomerang.lua
