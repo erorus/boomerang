@@ -1,4 +1,4 @@
-## Interface: 80000
+## Interface: 80200
 ## Title: Boomerang Anti-Snipe
 ## Author: Erorus
 ## Notes: Prevents posting auctions at low buyouts. Requires a pricing source like TSM, TUJ, Auctionator, etc.
